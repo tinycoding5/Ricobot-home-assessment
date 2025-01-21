@@ -3,6 +3,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { styled } from "@mui/material/styles";
 import MainTextContent from "./MainTextContent";
 import { HOME_BACKGROUND_IMAGE_RATE } from "@/utils/constant";
+import Image from "next/image";
 
 const MainContent = () => {
   const [dogImageSize, setDogImageSize] = useState(1);
@@ -33,10 +34,10 @@ const MainContent = () => {
     <div>
       <MainRoot>
         <Background ref={backgroundRef}>
-          <img src="assets/1-background.png" alt="background" />
+          <Image src="assets/1-background.png" alt="background" />
         </Background>
         <DogImage>
-          <img
+          <Image
             src="assets/1-foreground-cutout.png"
             alt="dog"
             style={{ width: `${dogImageSize}px` }}
@@ -62,7 +63,7 @@ const Background = styled("div")(() => ({
   },
 }));
 
-const DogImage = styled("div")(({ theme }) => ({
+const DogImage = styled("div")(() => ({
   position: "absolute",
   top: "-12%",
   left: "47%",

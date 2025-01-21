@@ -9,8 +9,10 @@ declare module "@mui/material/styles" {
     violet: PaletteColorOptions;
     white: PaletteColorOptions;
   }
+  /* eslint-disable */
   interface Palette extends CustomPalette {}
   interface PaletteOptions extends CustomPalette {}
+  /* eslint-enable */
 }
 
 declare module "@mui/material/styles" {

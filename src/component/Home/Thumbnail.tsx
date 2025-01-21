@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import { styled } from "@mui/material/styles";
+import Image from "next/image";
 
 interface ThumbnailProps {
   url: string;
@@ -13,7 +14,7 @@ const Thumbnail = ({ url, alt, active = false }: ThumbnailProps) => {
     <Root>
       <ImageRoot className={active ? "active" : ""}>
         <ImageBackground className={active ? "active" : ""}>
-          <img src={url} alt={alt} />
+          <Image src={url} alt={alt} />
         </ImageBackground>
       </ImageRoot>
     </Root>

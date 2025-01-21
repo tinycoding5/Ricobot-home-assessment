@@ -41,7 +41,7 @@ const MainTextContent = ({ height }: MainTextContentProps) => {
 
 export default MainTextContent;
 
-const MainRoot = styled("div")(({ theme }) => ({
+const MainRoot = styled("div")(() => ({
   position: "absolute",
   top: 0,
   width: "100%",
