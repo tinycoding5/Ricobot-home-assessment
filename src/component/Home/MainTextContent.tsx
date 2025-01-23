@@ -2,39 +2,30 @@ import React from "react";
 import { styled } from "@mui/material/styles";
 import { CustomButton } from "../common/CustomButton";
 import { useIsMobile } from "@/hooks/useIsMobile";
-import MainDogContent from "./MainDogContent";
 
-interface MainTextContentProps {
-  height: string | number;
-}
-
-const MainTextContent = ({ height }: MainTextContentProps) => {
+const MainTextContent = () => {
   const { isMobile } = useIsMobile();
   return (
     <MainRoot>
-      <Root style={{ minHeight: height }}>
-        <MoreText>
-          MORE FROM
-          <br />
-          RICO THE DOG
-        </MoreText>
-        <BackButtonRoot>
-          <CustomButton variant="outlined" color="white">
-            Rico is back!
-          </CustomButton>
-        </BackButtonRoot>
-        <RicoBot>RICOBOT</RicoBot>
-        <RicoText>
-          Charge into a brand-new supersized adventure with RICO across{" "}
-          {!isMobile ? <br /> : ""}50 exciting and diverse worlds, available now
-          on PS5!
-        </RicoText>
-        <BtnLearnMore variant="contained" color="white" size="large">
-          Learn More
-        </BtnLearnMore>
-        <MainDogContent />
-      </Root>
-      <FooterSection />
+      <MoreText>
+        MORE FROM
+        <br />
+        RICO THE DOG
+      </MoreText>
+      <BackButtonRoot>
+        <CustomButton variant="outlined" color="white">
+          Rico is back!
+        </CustomButton>
+      </BackButtonRoot>
+      <RicoBot>RICOBOT</RicoBot>
+      <RicoText>
+        Charge into a brand-new supersized adventure with RICO across{" "}
+        {!isMobile ? <br /> : ""}50 exciting and diverse worlds, available now
+        on PS5!
+      </RicoText>
+      <BtnLearnMore variant="contained" color="white" size="large">
+        Learn More
+      </BtnLearnMore>
     </MainRoot>
   );
 };
@@ -42,37 +33,9 @@ const MainTextContent = ({ height }: MainTextContentProps) => {
 export default MainTextContent;
 
 const MainRoot = styled("div")(() => ({
-  position: "absolute",
-  top: 0,
+  // position: "absolute",
+  // top: 0,
   width: "100%",
-}));
-
-const Root = styled("div")(({ theme }) => ({
-  color: "#FFFFFF",
-  width: "100%",
-  padding: theme.spacing(14, 10),
-  background:
-    "linear-gradient(to left, rgba(37, 45, 55, 0) 40%, #000000 100%, #09101A 100%), linear-gradient(to top, rgba(0, 0, 0, 1) 10%, rgba(0, 0, 0, 0) 75%)",
-  [theme.breakpoints.down("lg")]: {
-    padding: theme.spacing(4, 3),
-    background:
-      "linear-gradient(to left, rgba(37, 45, 55, 0) 50%, #000000 100%, #09101A 100%), linear-gradient(to top, rgba(0, 0, 0, 1) 20%, rgba(0, 0, 0, 0) 75%)",
-  },
-  [theme.breakpoints.down("mmd")]: {
-    padding: theme.spacing(4, 3),
-    background:
-      "linear-gradient(to left, rgba(37, 45, 55, 0) 50%, #000000 100%, #09101A 100%), linear-gradient(to top, rgba(0, 0, 0, 1) 40%, rgba(0, 0, 0, 0) 75%)",
-  },
-  [theme.breakpoints.down("md")]: {
-    padding: theme.spacing(4, 3),
-    background:
-      "linear-gradient(to left, rgba(37, 45, 55, 0) 50%, #000000 100%, #09101A 100%), linear-gradient(to top, rgba(0, 0, 0, 1) 40%, rgba(0, 0, 0, 0) 75%)",
-  },
-  [theme.breakpoints.down("sm")]: {
-    padding: theme.spacing(4, 3),
-    background:
-      "linear-gradient(to left, rgba(37, 45, 55, 0) 50%, #000000 100%, #09101A 100%), linear-gradient(to top, rgba(0, 0, 0, 1) 70%, rgba(0, 0, 0, 0) 100%)",
-  },
 }));
 
 const MoreText = styled("div")(({ theme }) => ({
@@ -116,12 +79,5 @@ const BtnLearnMore = styled(CustomButton)(({ theme }) => ({
   fontWeight: 900,
   [theme.breakpoints.down("md")]: {
     fontSize: 14,
-  },
-}));
-
-const FooterSection = styled("div")(({ theme }) => ({
-  [theme.breakpoints.down("mmd")]: {
-    height: theme.spacing(12),
-    backgroundColor: "#FFF",
   },
 }));
